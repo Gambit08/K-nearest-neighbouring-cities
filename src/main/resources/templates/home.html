@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/home}" th:object="${coordinate}" method="post">
+    <p>latitude: <input type="text" th:field="*{latitude}" /></p>
+    <p>Longitude: <input type="text" th:field="*{longitude}" /></p>
+    <p><input type="submit" value="Add" /> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>
