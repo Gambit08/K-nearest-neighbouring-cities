@@ -2,8 +2,17 @@ package com.spring.rtree.models;
 
 public class Coordinate {
 
+    private String location;
     private float latitude;
     private float longitude;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public float getLatitude() {
         return latitude;
