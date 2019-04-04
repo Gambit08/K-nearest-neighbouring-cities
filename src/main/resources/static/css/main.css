@@ -1,7 +1,7 @@
-h1{
-	color:#0000FF;
+.successColor{
+  color:green;
 }
 
-h2{
-	color:#FF0000;
+.errorColor{
+  color:red;
 }
