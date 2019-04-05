@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="text/css" th:href="@{/css/main.css}">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/service/rtree/add">Add <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/service/rtree/query">Query</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container">
+            <form action="#" th:action="@{/service/rtree/query}" th:object="${query}" method="post">
+                <div id="locDiv" class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" placeholder="Enter location" th:field="*{location}" required/>
+                </div>
+                <div class="form-group">
+                    <label for="distance">Distance</label>
+                    <input type="text" class="form-control" id="distance" placeholder="Enter Distance" th:field="*{distance}" required/>
+                </div>
+                <button id="querySbmt" type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" id="reset" class="btn btn-primary">Reset</button>
+            </form>
+    </div>
+
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/Query.js}"></script>
+</body>
+</html>
