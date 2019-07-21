@@ -1,3 +1,5 @@
-**/.idea
-**/target
-**/out
+*.txt
+*.idea
+*.iml
+out/
+target/
