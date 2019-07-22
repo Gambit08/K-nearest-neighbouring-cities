@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/service/rtree/add">Add <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/service/rtree/query">Query</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.latlong.net/" target="_blank">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div th:if="${not #lists.isEmpty(results)}">
+        <h2>Nearest Cities</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>City</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+            <tr th:each="result : ${results}">
+                <td th:text="${result.location}"></td>
+                <td th:text="${result.latitude}"></td>
+                <td th:text="${result.longitude}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
