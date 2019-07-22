@@ -23,11 +23,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="/service/rtree/query">Query</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.latlong.net/" target="_blank">Help</a>
+            </li>
         </ul>
     </div>
 </nav>
 
-    <div class="container">
+<div class="container">
+    <div class="row">
+
+        <div class="col mt-4">
             <form action="#" th:action="@{/service/rtree/query}" th:object="${query}" method="post">
                 <div id="locDiv" class="form-group">
                     <label for="location">Location</label>
@@ -37,13 +43,31 @@
                     <label for="distance">Distance</label>
                     <input type="text" class="form-control" id="distance" placeholder="Enter Distance" th:field="*{distance}" required/>
                 </div>
+                <div class="form-group">
+                    <label for="latitude">Latitude</label>
+                    <input type="text" class="form-control" id="latitude" placeholder="Enter Latitude" th:field="*{latitude}" required/>
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Longitude</label>
+                    <input type="text" class="form-control" id="longitude" placeholder="Enter Longitude" th:field="*{longitude}" required/>
+                </div>
                 <button id="querySbmt" type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" id="reset" class="btn btn-primary">Reset</button>
+                <button type="button" id="currentLocation" class="btn btn-primary">Current Position</button>
             </form>
+        </div>
+
+        <div class="col mt-4" id="map">
+
+        </div>
+
     </div>
+</div>
 
 
 <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/Query.js}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_gz7SLZrCkJtza1j89qHXfhrwN2rOBX4&callback=initMap">
+</script>
 </body>
 </html>
